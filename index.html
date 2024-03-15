@@ -1,53 +1,127 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <title>Cation-π</title>
-<style>
-body {background-color: #ddf0dd;max-width:800px;}
-</style>
+    <style>
+        .row {
+            display: table;
+            width: 100%; /*Optional*/
+            table-layout: fixed; /*Optional*/
+            border-spacing: 5px; /*Optional*/
+        }
+        .col {
+            display: table-cell;
+        }
+        .container {
+            display: grid;
+            grid-gap: 10px;
+            grid-template-columns: auto minmax(10em, 40em) auto;
+            grid-template-areas:
+            "left_sidebar  content   right_sidebar"
+        }
+
+        *, body {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            background-color: #f5f3d5;
+        }
+
+        .left_sidebar {
+            grid-area: left_sidebar;
+            background-color: #ddf0dd;
+        }
+
+        .right_sidebar {
+            grid-area: right_sidebar;
+            background-color: #ddf0dd;
+        }
+
+    </style>
   </head>
   <body>
-<h2>3D Plots</h2>
-      <table>
-          <tr> <td><h3>Densities</h3></td> <td><h3>Difference Densities</h3></td> </tr>
-          <tr> <td><h4>Phenylalanine</h4></td> <td></td> </tr>
-          <tr>
-              <td><a href="20220610_phe_terminal_20_inner_20.html"> PHE: Terminal vs inner, cont at 20</a></td>
-              <td><a href="20220610_phe_terminal_12_inner_12_diff.html">PHE: Terminal vs inner, cont at 12, diff </a></td> </tr>
-         <tr> <td><a href="20220610_phe_lysnz_1-8_metce_1-8.html"> PHE: LyzNZ vs MetCE, cont at 1.8</a></td>
-              <td><a href="20220610_phe_lysnz_1-8_metce_1-8_diff.html">PHE: LyzNZ vs MetCE, cont at 1.8, diff </a></td> </tr>
-          <tr> <td><h4>Tryptophan</h4></td> <td></td> </tr>
-          <tr>
-              <td><a href="20220610_trp_terminal_8_inner_8.html">TRP: Terminal vs Inner, cont at 8</a></td>
-              <td><a href="20220610_trp_terminal_6_inner_6_diff.html">TRP: Terminal vs Inner, cont at 6, diff</a></td> </tr> <tr>
-              <td><a href="20220610_trp_lysnz_1-05_metce_1-05.html">TRP: LysNZ vs MetCE, cont at 1.05</a></td>
-              <td><a href="20220610_trp_lysnz_1-05_metce_1-05_diff.html">TRP: LysNZ vs MetCE, cont at 1.05, diff</a></td>
-          </tr>
-          <tr> <td><h4>Tyrosine<h4></td> <td></td> </tr>
+    <div class="container">
+        <div class="left_sidebar"></div>
+        <div class="right_sidebar"></div>
 
-          <tr><td><a href="20220610_tyr_terminal_16_inner_16.html"> TYR: Terminal vs Inner, cont at 16</a></td>
-              <td><a href="20220610_tyr_terminal_10_inner_10_diff.html">TYR: Terminal vs Inner, cont at 10, diff</a></td> </tr> <tr>
-              <td><a href="20220610_tyr_lysnz_1-2_metce_1-2.html"> TYR: LysNZ vs MetCE, cont at 1.2</a></td>
-              <td><a href="20220610_tyr_lysnz_1-3_metce_1-3_diff.html"> TYR: LysNZ vs MetCE, cont at 1.3, diff</a></td>
-          </tr>
-          <tr>
+        <div class="content">
+          <h2>3D Plots</h2>
+          <div class="row">
+              <div class="col"><h3>Densities</h3></div>
+              <div class="col"><h3>Difference Densities</h3> </div> 
+          </div>
+          <div class="row">
+              <div class="col"><b>Phenylalanine</b></div> 
+              <div class="col"></div> 
+          </div>
+          <div class="row">
+              <div class="col"><a href="20220610_phe_terminal_20_inner_20.html"> Terminal vs inner, cont at 20</a></div>
+              <div class="col"><a href="20220610_phe_terminal_12_inner_12_diff.html">Terminal vs inner, cont at 12, diff </a></div>
+          </div>
+          <div class="row">
+              <div class="col"><a href="20220610_phe_lysnz_1-8_metce_1-8.html"> LyzNZ vs MetCE, cont at 1.8</a></div>
+              <div class="col"><a href="20220610_phe_lysnz_1-8_metce_1-8_diff.html">LyzNZ vs MetCE, cont at 1.8, diff </a></div>
+          </div>
+          <br>
+          <div class="row">
+              <div class="col"><b>Tryptophan</b></div>
+              <div class="col"></div>
+          </div>
+          <div class="row">
+              <div class="col"><a href="20220610_trp_terminal_8_inner_8.html">Terminal vs Inner, cont at 8</a></div>
+              <div class="col"><a href="20220610_trp_terminal_6_inner_6_diff.html">Terminal vs Inner, cont at 6, diff</a></div>
+          </div> 
+          <div class="row">
+              <div class="col"><a href="20220610_trp_lysnz_1-05_metce_1-05.html">LysNZ vs MetCE, cont at 1.05</a></div>
+              <div class="col"><a href="20220610_trp_lysnz_1-05_metce_1-05_diff.html">LysNZ vs MetCE, cont at 1.05, diff</a></div>
+          </div>
+          <br>
+          <div class="row">
+              <div class="col"><b>Tyrosine</b></div>
+              <div class="col"></div> 
+          </div>
+          <div class="row">
+              <div class="col"><a href="20220610_tyr_terminal_16_inner_16.html"> Terminal vs Inner, cont at 16</a></div>
+              <div class="col"><a href="20220610_tyr_terminal_10_inner_10_diff.html">Terminal vs Inner, cont at 10, diff</a></div>
+          </div>
+          <div class="row">
+              <div class="col"><a href="20220610_tyr_lysnz_1-2_metce_1-2.html"> LysNZ vs MetCE, cont at 1.2</a></div>
+              <div class="col"><a href="20220610_tyr_lysnz_1-3_metce_1-3_diff.html"> LysNZ vs MetCE, cont at 1.3, diff</a></div>
+          </div>
 
-              <td>___________</td>
-              <td></td>
-          </tr>
-          <tr>
-              <td colspan="2"><h2>Methods</h2><p>Coordinate systems were set up centered on the six-membered rings of Phenylalanine, Tyrosine and Tryptopan. Within these coordinate systems the position of every atom within a 20x20x20  &#8491; cube was determined. Atoms belonging to residues that were less than seven positions away in sequence from the aromatic residue they were measured with respect to were removed. This was done to avoid local concentrations effects. The 20x20x20  &#8491; cube was divided into cubic voxels with sides of 0.25 &#8491. Then for two sets of atoms (example the NZ of Lysine and the CE of Methionine), the number of atoms per voxel was counted. The total counts for each set were normalised to be the same. The (normalised) counts were converted to electron densities in the ccp4 format, allowing for easy visualisation in a molecular viewer. 3D plots were generated using the UCSF Chimera export to HTML (WebGL) option. In these plots the density for one set of atoms was colored red and the other was colored blue. Similarly, difference density plotes were generated by subtracting the values per voxel from each other after normalisation. Voxels where one set of atoms was dominant were colored red, while the others were colored blue.</p><p> 
-The exact specification of terminal atoms is as follows: SEROG, CYSSG, VALCG1, VALCG2, THRCG2, THROG1, ILECD1, LEUCD2, LEUCD1, ASPOD1, ASPOD2, ASNND2, ASNOD1, GLUOE1, GLUOE2, GLNOE1, GLNNE2, METCE.</p><p>
-The exact specification of the inner atoms is as follows: 
-SERCB, THRCB, CYSCB, VALCB, ILECB, ILECG1,        LEUCB, LEUCG, ASPCB, ASPCG, ASNCB, ASNCG, GLUCB,          GLUCG, GLUCD, GLNCB, GLNCG, GLNCD, METCB, METCG,          METSD.</p>
-</td>
-              <td></td>
-          </tr>
-
-<p></p>
-
-
+          <br>
+          <hr>
+          <br>
+          <h4>Methods</h4>
+          <p>
+              Coordinate systems were set up centered on the six-membered rings of Phenylalanine, 
+              Tyrosine and Tryptopan. Within these coordinate systems the position of every atom 
+              within a 20x20x20 Å; cube was determined. Atoms belonging to residues 
+              that were less than seven positions away in sequence from the aromatic residue they
+              were measured with respect to were removed. This was done to avoid local concentrations 
+              effects. The 20x20x20 Å; cube was divided into cubic voxels with sides of 
+              0.25 Å. Then for two sets of atoms (example the NZ of Lysine and the CE of Methionine),
+              the number of atoms per voxel was counted. The total counts for each set were normalised to 
+              be the same. The (normalised) counts were converted to electron densities in the ccp4 format
+              , allowing for easy visualisation in a molecular viewer. 3D plots were generated using the
+              UCSF Chimera export to HTML (WebGL) option. In these plots the density for one set of atoms 
+              was colored red and the other was colored blue. Similarly, difference density plotes were 
+              generated by subtracting the values per voxel from each other after normalisation. Voxels 
+              where one set of    atoms was dominant were colored red, while the others were colored blue.
+          </p>
+          <p>
+              - The exact specification of terminal atoms is as follows: SEROG, CYSSG, VALCG1, VALCG2, 
+                THRCG2, THROG1, ILECD1, LEUCD2, LEUCD1, ASPOD1, ASPOD2, ASNND2, ASNOD1, GLUOE1, GLUOE2, 
+                GLNOE1, GLNNE2, METCE.
+          </p>
+          <p>
+              - The exact specification of the inner atoms is as follows:
+              - SERCB, THRCB, CYSCB, VALCB, ILECB, ILECG1, LEUCB, LEUCG, ASPCB, ASPCG, ASNCB, ASNCG, GLUCB,
+                GLUCG, GLUCD, GLNCB, GLNCG, GLNCD, METCB, METCG, METSD.
+          </p>
+        </div>
+   </div>
  </body>
 </html>
 
